@@ -1,0 +1,71 @@
+﻿@page "/bookList"
+@inherits BookListBase
+
+
+<div class="border">
+    <div class="card-header text-center">
+        <h1>List of Books</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>ISBN</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Publisher</th>
+                    <th>Publication Date</th>
+                    <th>Authors</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Books)
+                {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.ISBN</td>
+                    <td>@item.Price.ToString("c")</td>
+                    <td>@item.Category.CategoryName</td>
+                    <td>@item.Publisher.PublisherName</td>
+                    <td>@item.DateOfPublication.ToLongDateString()</td>
+                    <td>
+                        <ul>
+                            @foreach (var bookAuthor in item.BookAuthors)
+                            {
+                                <li>@bookAuthor.Author.FullName 
+                                    <a class="btn btn-danger mb-1" style="font-weight: bold; float: right" 
+                                       href="@($"/deleteBookAuthor/{bookAuthor.AuthorID}/{bookAuthor.BookID}")">
+                                        <i class="oi oi-person">Delete</i>
+                                    </a>
+                                </li>
+                                <br/>
+                            }
+                        </ul>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary m-1" style="font-weight: bold" href="@($"/bookDetail/{item.BookID}")">
+                            <i class="oi oi-book">View</i>
+                        </a>
+                        <a class="btn btn-warning m-1" style="font-weight: bold" href="@($"/editBook/{item.BookID}")">
+                            <i class="oi oi-pencil">Edit</i>
+                        </a>
+                        <a class="btn btn-danger m-1" style="font-weight: bold" href="@($"/deleteBook/{item.BookID}")">
+                            <i class="oi oi-delete">Delete</i>
+                        </a>
+                        <a class="btn btn-success m-1" style="font-weight: bold" href="@($"/addAuthorToBook/{item.BookID}")">
+                            <i class="oi oi-person">Add Author</i>
+                        </a>
+                    </td>
+                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-outline-primary btn-block" href="addBook" style="font-weight: bold">Create Book</a>
+    </div>
+</div>

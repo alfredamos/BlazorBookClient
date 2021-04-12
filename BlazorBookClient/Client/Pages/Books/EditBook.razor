@@ -1,0 +1,5 @@
+﻿@page "/editBook/{Id:int}"
+@inherits EditBookBase
+
+<BookForm Book="Book" Categories="Categories" Publishers="Publishers"
+          UpsertBook="UpdateBook" CancelMethod="Cancel" UpsertButton="Save" CancelButton="Cancel" />

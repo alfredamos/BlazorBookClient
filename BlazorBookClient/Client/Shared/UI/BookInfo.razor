@@ -1,0 +1,47 @@
+﻿
+
+<div class="border" style="width: 50%">
+    <div class="card-header text-center">
+        <h3>Book Detail</h3>
+    </div>
+    <div class="card-body">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Title : @Book.Title</td>
+                </tr>
+                <tr>
+                    <td>ISBN : @Book.ISBN</td>
+                </tr>
+                <tr>
+                    <td>Price : @Book.Price</td>
+                </tr>
+                <tr>
+                    <td>Publication Date : @Book.DateOfPublication</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-outline-danger btn-block" @onclick="DeleteClick" style="font-weight: bold">
+            Delete
+        </button>
+        <button type="button" class="btn btn-outline-primary btn-block" @onclick="BackToList" style="font-weight: bold">
+            Back to List
+        </button>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public BookView Book { get; set; } = new();
+
+    [Parameter]
+    public EventCallback DeleteClick { get; set; }
+
+    [Parameter]
+    public EventCallback BackToList { get; set; }
+
+
+}

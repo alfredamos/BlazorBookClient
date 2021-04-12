@@ -1,0 +1,47 @@
+﻿@page "/authorList"
+@inherits PublisherListBase
+
+
+<div class="border">
+    <div class="card-header text-center">
+        <h1>List of Authors</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Birth Date</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Authors)
+                {
+                    <tr>
+                        <td>@item.FullName</td>
+                        <td>@item.BirthDateString</td>
+                        <td>@item.Location</td>
+                        <td>
+                            <a class="btn btn-primary" style="font-weight: bold" href="@($"/authorDetail/{item.AuthorID}")">
+                                <i class="oi oi-book">View</i>
+                            </a>
+                            <a class="btn btn-warning" style="font-weight: bold" href="@($"/editAuthor/{item.AuthorID}")">
+                                <i class="oi oi-pencil">Edit</i>
+                            </a>
+                            <a class="btn btn-danger" style="font-weight: bold" href="@($"/deleteAuthor/{item.AuthorID}")">
+                                <i class="oi oi-delete">Delete</i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-outline-primary btn-block" href="addAuthor" style="font-weight: bold">Create Author</a>
+    </div>
+</div>

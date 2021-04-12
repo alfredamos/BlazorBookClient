@@ -1,0 +1,8 @@
+﻿@page "/deleteAuthor/{Id:int}"
+@inherits DeletePublisherBase
+
+<AuthorInfo Author="Author" BackToList="Cancel" DeleteClick="DeleteClick" />
+
+
+<ConfirmDelete @ref="DeleteConfirmation" ConfirmationChanged="DeleteAuthor" ConfirmationMessage="@($"Are you sure you want to delete {Author.AuthorID} ?")"
+               ConfirmationTitle="Author Delete Confirmation" />

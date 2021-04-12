@@ -1,0 +1,5 @@
+﻿@page "/editAuthor/{Id:int}"
+@inherits EditPublisherBase
+
+<AuthorForm Author="Author" UpsertAuthor="UpdateAuthor" CancelMethod="Cancel"
+            UpsertButton="Save" CancelButton="Cancel" />

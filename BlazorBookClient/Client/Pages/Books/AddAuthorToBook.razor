@@ -1,0 +1,5 @@
+﻿@page "/addAuthorToBook/{Id:int}"
+@inherits AddAuthorToBookBase
+
+<IncludeAuthor Author="Author" Authors="Authors" UpsertBook="AuthorAddToBook"
+               CancelMethod="Cancel" UpsertButton="AddAuthor" CancelButton="Cancel"/>

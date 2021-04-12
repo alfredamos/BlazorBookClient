@@ -1,0 +1,5 @@
+﻿@page "/editCategory/{Id:int}"
+@inherits EditCategoryBase
+
+<CategoryForm Category="Category" UpsertCategory="UpdateCategory" CancelMethod="Cancel"
+              UpsertButton="Save" CancelButton="Cancel" />

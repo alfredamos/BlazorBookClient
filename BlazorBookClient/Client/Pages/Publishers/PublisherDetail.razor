@@ -1,0 +1,8 @@
+﻿@page "/publisherDetail/{Id:int}"
+@inherits PublisherDetailBase
+
+<PublisherInfo Publisher="Publisher" BackToList="Cancel" DeleteClick="DeleteClick" />
+
+
+<ConfirmDelete @ref="DeleteConfirmation" ConfirmationChanged="DeletePublisher" ConfirmationMessage="@($"Are you sure you want to delete {Publisher.PublisherName} ?")"
+               ConfirmationTitle="Publisher Delete Confirmation" />

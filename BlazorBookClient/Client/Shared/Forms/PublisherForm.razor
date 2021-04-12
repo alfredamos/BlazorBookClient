@@ -1,0 +1,47 @@
+﻿
+
+<div class="border">
+    <div class="card-header text-center">
+        <h1>Publisher Form</h1>
+    </div>
+    <div class="card-body">
+        <EditForm Model="Publisher">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <div class="form-group">
+                <label for="PublisherName" class="form-label">Publisher Name</label>
+                <InputText @bind-Value="Publisher.PublisherName" class="form-control" placeholder="Publisher Name" />
+                <ValidationMessage For="@(() => Publisher.PublisherName)" />
+            </div>            
+            <div class="form-group">
+                <label for="Location" class="form-label">Location</label>
+                <InputText @bind-Value="Publisher.Location" class="form-control" placeholder="Location" />
+                <ValidationMessage For="@(() => Publisher.Location)" />
+            </div>
+            
+        </EditForm>
+    </div>
+    <div class="card-footer">
+        <div class="form-group">
+            <button type="button" @onclick="UpsertPublisher" class="btn btn-outline-success btn-block" style="font-weight: bold">@UpsertButton</button>
+            <button type="button" @onclick="CancelMethod" class="btn btn-outline-primary btn-block" style="font-weight: bold">@CancelButton</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public PublisherView Publisher { get; set; } = new PublisherView();
+
+    [Parameter]
+    public EventCallback UpsertPublisher { get; set; }
+
+    [Parameter]
+    public EventCallback CancelMethod { get; set; }
+
+    [Parameter]
+    public string UpsertButton { get; set; }
+
+    [Parameter]
+    public string CancelButton { get; set; }
+}

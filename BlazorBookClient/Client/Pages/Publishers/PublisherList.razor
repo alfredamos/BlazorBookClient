@@ -1,0 +1,45 @@
+﻿@page "/publisherList"
+@inherits PublisherListBase
+
+
+<div class="border">
+    <div class="card-header text-center">
+        <h1>List of Publishers</h1>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Publisher Name</th>                   
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Publishers)
+                {
+                    <tr>
+                        <td>@item.PublisherName</td>                        
+                        <td>@item.Location</td>
+                        <td>
+                            <a class="btn btn-primary" style="font-weight: bold" href="@($"/publisherDetail/{item.PublisherID}")">
+                                <i class="oi oi-book">View</i>
+                            </a>
+                            <a class="btn btn-warning" style="font-weight: bold" href="@($"/editPublisher/{item.PublisherID}")">
+                                <i class="oi oi-pencil">Edit</i>
+                            </a>
+                            <a class="btn btn-danger" style="font-weight: bold" href="@($"/deletePublisher/{item.PublisherID}")">
+                                <i class="oi oi-delete">Delete</i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-outline-primary btn-block" href="addPublisher" style="font-weight: bold">Create Publisher</a>
+    </div>
+</div>

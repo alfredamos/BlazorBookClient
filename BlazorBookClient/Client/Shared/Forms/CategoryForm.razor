@@ -1,0 +1,42 @@
+﻿
+
+<div class="border">
+    <div class="card-header text-center">
+        <h1>Category Form</h1>
+    </div>
+    <div class="card-body">
+        <EditForm Model="Category">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <div class="form-group">
+                <label for="CategoryName" class="form-label">Category Name</label>
+                <InputText @bind-Value="Category.CategoryName" class="form-control" placeholder="Category Name" />
+                <ValidationMessage For="@(() => Category.CategoryName)" />
+            </div>
+
+        </EditForm>
+    </div>
+    <div class="card-footer">
+        <div class="form-group">
+            <button type="button" @onclick="UpsertCategory" class="btn btn-outline-success btn-block" style="font-weight: bold">@UpsertButton</button>
+            <button type="button" @onclick="CancelMethod" class="btn btn-outline-primary btn-block" style="font-weight: bold">@CancelButton</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public CategoryView Category { get; set; } = new CategoryView();
+
+    [Parameter]
+    public EventCallback UpsertCategory { get; set; }
+
+    [Parameter]
+    public EventCallback CancelMethod { get; set; }
+
+    [Parameter]
+    public string UpsertButton { get; set; }
+
+    [Parameter]
+    public string CancelButton { get; set; }
+}

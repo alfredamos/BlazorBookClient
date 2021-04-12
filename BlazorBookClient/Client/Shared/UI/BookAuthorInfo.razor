@@ -1,0 +1,43 @@
+﻿
+<div class="border" style="width: 50%">
+    <div class="card-header text-center">
+        <h3>Book Author Detail</h3>
+    </div>
+    <div class="card-body">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Name Of Author : @NameOfAuthor</td>
+                </tr>
+                <tr>
+                    <td>Name Of Book : @TitleOfBook</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-outline-danger btn-block" @onclick="DeleteClick" style="font-weight: bold">
+            Delete
+        </button>
+        <button type="button" class="btn btn-outline-primary btn-block" @onclick="BackToList" style="font-weight: bold">
+            Back to List
+        </button>
+    </div>
+</div>
+
+
+@code {    
+    [Parameter]
+    public string NameOfAuthor { get; set; }
+
+    [Parameter]
+    public string TitleOfBook { get; set; }
+
+    [Parameter]
+    public EventCallback DeleteClick { get; set; }
+
+    [Parameter]
+    public EventCallback BackToList { get; set; }
+
+
+}

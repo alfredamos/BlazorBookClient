@@ -1,0 +1,8 @@
+﻿@page "/categoryDetail/{Id:int}"
+@inherits CategoryDetailBase
+
+<CategoryInfo Category="Category" BackToList="Cancel" DeleteClick="DeleteClick"/>
+
+
+<ConfirmDelete @ref="DeleteConfirmation" ConfirmationChanged="DeleteCategory" ConfirmationMessage="@($"Are you sure you want to delete {Category.CategoryName} ?")"
+               ConfirmationTitle="Category Delete Confirmation" />

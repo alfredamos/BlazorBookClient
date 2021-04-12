@@ -1,0 +1,8 @@
+﻿@page "/deleteBook/{Id:int}"
+@inherits DeleteBookBase
+
+<BookInfo Book="Book" BackToList="Cancel" DeleteClick="DeleteClick" />
+
+
+<ConfirmDelete @ref="DeleteConfirmation" ConfirmationChanged="DeletePublisher" ConfirmationMessage="@($"Are you sure you want to delete {Book.Title} ?")"
+               ConfirmationTitle="Book Delete Confirmation" />
