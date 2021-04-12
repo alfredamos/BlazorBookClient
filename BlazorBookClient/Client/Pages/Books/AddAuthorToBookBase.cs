@@ -36,20 +36,15 @@ namespace BlazorBookClient.Client.Pages.Books
 
         public BookAuthor BookAuthor { get; set; } = new();
 
-        public List<BookAuthor> BookAuthors { get; set; } = new();
-
         public List<AuthorView> Authors { get; set; } = new List<AuthorView>();
 
         public AuthorView Author { get; set; } = new AuthorView();
-
-        public Author AuthorDB { get; set; } = new();
 
         protected async override Task OnInitializedAsync()
         {
             AuthorsDB = (await AuthorService.GetAll()).ToList();
             BookDB = await BookService.GetById(Id);
-            //BookAuthors = BookDB.BookAuthors;
-
+           
             Mapper.Map(AuthorsDB, Authors);
            
         }
