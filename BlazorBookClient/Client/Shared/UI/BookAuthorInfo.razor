@@ -1,5 +1,5 @@
 ﻿
-<div class="border" style="width: 50%">
+<div class="border" style="width: 30%">
     <div class="card-header text-center">
         <h3>Book Author Detail</h3>
     </div>
@@ -7,10 +7,19 @@
         <table>
             <tbody>
                 <tr>
-                    <td>Name Of Author : @NameOfAuthor</td>
+                    <td><strong>Author: </strong>@NameOfAuthor</td>
                 </tr>
                 <tr>
-                    <td>Name Of Book : @TitleOfBook</td>
+                    <td><strong>ISBN : </strong>@ISBNOfBook</td>
+                </tr>
+                <tr>
+                    <td><strong>Title: </strong>@TitleOfBook</td>
+                </tr>
+                <tr>
+                    <td><strong>Price: </strong>@PriceOfBook.ToString("c")</td>
+                </tr>
+                <tr>
+                    <td><strong>Pub. Date : </strong>@DateOfPublication.ToLongDateString()</td>
                 </tr>
             </tbody>
         </table>
@@ -32,6 +41,15 @@
 
     [Parameter]
     public string TitleOfBook { get; set; }
+
+    [Parameter]
+    public string ISBNOfBook { get; set; }
+
+    [Parameter]
+    public double PriceOfBook { get; set; }
+
+    [Parameter]
+    public DateTime DateOfPublication { get; set; }
 
     [Parameter]
     public EventCallback DeleteClick { get; set; }

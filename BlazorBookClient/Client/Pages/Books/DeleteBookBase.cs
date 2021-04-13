@@ -43,7 +43,7 @@ namespace BlazorBookClient.Client.Pages.Books
             DeleteConfirmation.Show();
         }
 
-        protected async Task DeletePublisher(bool deleteConfirmed)
+        protected async Task DeleteBook(bool deleteConfirmed)
         {
             Mapper.Map(Book, BookDB);
 

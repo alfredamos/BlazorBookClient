@@ -1,8 +1,8 @@
 ﻿@page "/deleteBookAuthor/{IdOfAuthor:int}/{IdOfBook:int}"
 @inherits RemoveAuthorFromBookBase
 
-<BookAuthorInfo NameOfAuthor="@($"{NameOfAuthor}")" TitleOfBook="@($"{TitleOfBook}")"  BackToList="Cancel" 
-                DeleteClick="DeleteClick" />
+<BookAuthorInfo NameOfAuthor="@($"{NameOfAuthor}")" TitleOfBook="@($"{TitleOfBook}")" DateOfPublication="DateOfPublication" 
+                ISBNOfBook="@($"{ISBNOfBook}")"   PriceOfBook="PriceOfBook" BackToList="Cancel"  DeleteClick="DeleteClick" />
 
 
 <ConfirmDelete @ref="DeleteConfirmation" ConfirmationChanged="DeleteBookAuthor" ConfirmationMessage="@($"Are you sure you want to delete {TitleOfBook} by {NameOfAuthor}?")"

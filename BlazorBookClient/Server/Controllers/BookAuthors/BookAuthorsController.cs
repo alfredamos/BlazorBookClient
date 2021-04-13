@@ -41,7 +41,7 @@ namespace BlazorBookClient.Server.Controllers.BookAuthors
             }
         }
 
-        // GET: api/BookAuthors/5
+        // GET: api/BookAuthors/5/3
         [HttpGet("{idOfAuthor:int}/{idOfBook:int}", Name = "GetBookAuthor")]
         public async Task<ActionResult<BookAuthor>> GetBookAuthor(int idOfAuthor, int idOfBook)
         {
@@ -64,7 +64,7 @@ namespace BlazorBookClient.Server.Controllers.BookAuthors
 
         }
 
-        // PUT: api/BookAuthors/5
+        // PUT: api/BookAuthors/5/3
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{idOfAuthor:int}/{idOfBook:int}")]
         public async Task<ActionResult<BookAuthor>> PutBookAuthor(int idOfAuthor, int idOfBook, BookAuthor bookAuthor)
@@ -121,7 +121,7 @@ namespace BlazorBookClient.Server.Controllers.BookAuthors
 
         }
 
-        // DELETE: api/BookAuthors/5
+        // DELETE: api/BookAuthors/5/3
         [HttpDelete("{idOfAuthor:int}/{idOfBook:int}")]
         public async Task<ActionResult<BookAuthor>> DeleteBookAuthor(int idOfAuthor, int idOfBook)
         {

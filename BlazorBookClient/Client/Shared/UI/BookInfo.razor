@@ -1,6 +1,6 @@
 ﻿
 
-<div class="border" style="width: 50%">
+<div class="border" style="width: 30%">
     <div class="card-header text-center">
         <h3>Book Detail</h3>
     </div>
@@ -8,16 +8,16 @@
         <table>
             <tbody>
                 <tr>
-                    <td>Title : @Book.Title</td>
+                    <td><strong>Title : </strong>@Book.Title</td>
                 </tr>
                 <tr>
-                    <td>ISBN : @Book.ISBN</td>
+                    <td><strong>ISBN : </strong>@Book.ISBN</td>
                 </tr>
                 <tr>
-                    <td>Price : @Book.Price</td>
+                    <td><strong>Price : </strong>@Book.Price.ToString("c")</td>
                 </tr>
                 <tr>
-                    <td>Publication Date : @Book.DateOfPublication</td>
+                    <td><strong>Publication Date : </strong>@Book.DateOfPublication.ToLongDateString()</td>
                 </tr>
             </tbody>
         </table>

@@ -36,14 +36,19 @@ namespace BlazorBookClient.Client.Pages.Books
 
         public string TitleOfBook { get; set; }
 
+        public string ISBNOfBook { get; set; }
+
+        public double PriceOfBook { get; set; }
+
+        public DateTime DateOfPublication { get; set; }
+
         protected ConfirmDelete DeleteConfirmation { get; set; }
 
         protected async override Task OnInitializedAsync()
         {
             BookAuthorDB = await BookAuthorService.GetById(IdOfAuthor, IdOfBook);
 
-            NameOfAuthor = BookAuthorDB.Author.FullName;
-            TitleOfBook = BookAuthorDB.Book.Title;
+            BookAuthorProp();
 
             Mapper.Map(BookAuthorDB, BookAuthor);
         }
@@ -68,6 +73,16 @@ namespace BlazorBookClient.Client.Pages.Books
         protected void Cancel()
         {
             NavigationManager.NavigateTo("bookList");
+        }
+
+        private void BookAuthorProp()
+        {
+            NameOfAuthor = BookAuthorDB.Author.FullName;
+            TitleOfBook = BookAuthorDB.Book.Title;
+            ISBNOfBook = BookAuthorDB.Book.ISBN;
+            PriceOfBook = BookAuthorDB.Book.Price;
+            DateOfPublication = BookAuthorDB.Book.DateOfPublication;
+
         }
 
     }
