@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BlazorBookClient.Client.Pages.Authors
 {
-    public class DeletePublisherBase : ComponentBase
+    public class DeleteAuthorBase : ComponentBase
     {
         [Inject]
         public IAuthorService AuthorService { get; set; }

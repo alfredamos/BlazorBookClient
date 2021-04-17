@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BlazorBookClient.Client.Pages.Authors
 {
-    public class PublisherListBase : ComponentBase
+    public class AuthorListBase : ComponentBase
     {
         [Inject]
         public IAuthorService AuthorService { get; set; }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BlazorBookClient.Client.Pages.Authors
 {
-    public class PublisherDetailBase : ComponentBase
+    public class AuthorDetailBase : ComponentBase
     {
         [Inject]
         public IAuthorService AuthorService { get; set; }
